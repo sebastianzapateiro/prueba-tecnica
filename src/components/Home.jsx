@@ -26,7 +26,6 @@ function Home() {
             <Nav className="me-auto">
 
               <Nav.Link href="#action1" className='text-white'>Home</Nav.Link>
-              <Nav.Link href="#action1" className='text-white'>Own pokemon list</Nav.Link>
               <Nav.Link href="#action1" className='text-white'>Create pokemon</Nav.Link>
               <Nav.Link href="#action1" className='text-white'>Edit pokemon</Nav.Link>
               <Nav.Link href="#action1" className='text-white'>Delete pokemon</Nav.Link>
@@ -64,15 +63,12 @@ function Home() {
 
           <DropdownButton
             variant="outline-secondary"
-            title="Dropdown"
+            title="Origen"
             id="input-group-dropdown-2"
             align="end"
           >
-            <Dropdown.Item href="#">Action</Dropdown.Item>
-            <Dropdown.Item href="#">Another action</Dropdown.Item>
-            <Dropdown.Item href="#">Something else here</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item href="#">Separated link</Dropdown.Item>
+            <Dropdown.Item href="#">Pokemón API</Dropdown.Item>
+            <Dropdown.Item href="#">Firestore</Dropdown.Item>
           </DropdownButton>
         </InputGroup>
 
