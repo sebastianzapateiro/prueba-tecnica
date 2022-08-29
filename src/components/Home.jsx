@@ -108,8 +108,8 @@ function Home() {
             id="input-group-dropdown-2"
             align="end"
           >
-            <Dropdown.Item href="#" onClick={() => setWSearchPokemon('searchApi')}>Pokemon API</Dropdown.Item>
-            <Dropdown.Item href="#" onClick={() => setWSearchPokemon('firestore')}>Firestore</Dropdown.Item>
+            <Dropdown.Item href="#" className='link-api' onClick={() => setWSearchPokemon('searchApi')}>Pokemon API</Dropdown.Item>
+            <Dropdown.Item href="#" className='link-api' onClick={() => setWSearchPokemon('firestore')}>Firestore</Dropdown.Item>
           </DropdownButton>
         </InputGroup>
 
