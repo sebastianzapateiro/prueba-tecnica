@@ -11,6 +11,7 @@ import { PrivateRouter } from './PrivateRouter'
 import { PublicRouter } from './PublicRouter'
 import Login from '../components/Login';
 import Register from '../components/Register';
+import AgregarPokemon from '../components/AgregarPokemon';
 
 function AppRouters() {
   const [cheking, setCheking] = useState(true)
@@ -47,6 +48,13 @@ function AppRouters() {
 
       <Routes>
 
+      <Route path="/" element={
+          <PublicRouter isAutentication={isLoggedIn}>
+            <Login />
+          </PublicRouter>
+
+        } />
+
         <Route path="/login" element={
           <PublicRouter isAutentication={isLoggedIn}>
             <Login />
@@ -64,6 +72,12 @@ function AppRouters() {
         <Route path="/pokemon-a/:name" element={
           <PrivateRouter isAutentication={isLoggedIn}>
             <DescriptionPokemon />
+          </PrivateRouter>
+        } />
+
+<Route path="/add-pokemon" element={
+          <PrivateRouter isAutentication={isLoggedIn}>
+            <AgregarPokemon />
           </PrivateRouter>
         } />
 

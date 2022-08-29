@@ -21,7 +21,7 @@ function NavBar() {
         <Nav className="me-auto">
 
           <Link to={'/home'} className='text-white nav-link' >Home</Link>
-          <Nav.Link href="#action1" className='text-white'>Create pokemon</Nav.Link>
+          <Link to={'/add-pokemon'} className='text-white nav-link'>Create pokemon</Link>
           <Nav.Link href="#action1" className='text-white'>Edit pokemon</Nav.Link>
           <Nav.Link href="#action1" className='text-white'>Delete pokemon</Nav.Link>
         </Nav>
