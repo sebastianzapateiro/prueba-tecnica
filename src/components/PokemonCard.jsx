@@ -66,6 +66,8 @@ function PokemonCard(props) {
 
 
     return (
+        <>
+        <NavBar />
 
         <Card style={{ width: '16.3rem' }}>
                   <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />
@@ -88,7 +90,7 @@ function PokemonCard(props) {
 
             </Card.Body>
         </Card>
-
+</>
     )
 }
 

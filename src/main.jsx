@@ -4,11 +4,13 @@ import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRouters from './routers/AppRouters';
 import NavBar from './components/NavBar';
+import { Provider } from 'react-redux';
+import { store } from './redux/store/store';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
-  <React.StrictMode>
+  <Provider store={store}> 
     <AppRouters/>
-  </React.StrictMode>
+  </Provider>
 )

@@ -93,6 +93,7 @@ function Home() {
 
   return (
     <>
+      <NavBar />
 
       
 

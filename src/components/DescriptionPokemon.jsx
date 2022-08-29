@@ -45,7 +45,11 @@ function DescriptionPokemon() {
 
 
   return (
+    <>
+    <NavBar />
+
     <Container className='mt-5'>
+    
       <div className='d-flex justify-content-center flex-wrap mb-4'>
         #{name}
         <span> {pokemonDatos?.name}</span>
@@ -84,6 +88,7 @@ function DescriptionPokemon() {
         </Col>
       </Row>
     </Container>
+    </>
   )
 }
 
