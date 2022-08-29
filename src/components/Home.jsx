@@ -1,10 +1,11 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import PokemonCard from './PokemonCard'
+import PokemonCardF from './PokemonCardF'
 import Container from 'react-bootstrap/Container';
 import NavBar from './NavBar';
 
-import { getDate } from '../helpers/CRUD';
+import { getDataFireStore, getDate } from '../helpers/CRUD';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -15,6 +16,7 @@ function Home() {
   const [datePokemon, setDatePokemon] = useState([]);
   const [searchPokemon, setSearchPokemon] = useState('');
   const [wsearchPokemon, setWSearchPokemon] = useState('');
+  const [dataPokemonF, setDataPokemonF] = useState([]);
   const filtro = useRef('');
 
 
@@ -25,12 +27,23 @@ function Home() {
   const firestore = () => {
 
   }
+  async function getDataF() {
+    try {
+      const data = await getDataFireStore('pokemon');
+      setDataPokemonF(data);
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   useEffect(() => {
 
+
+
     async function getData() {
 
-      let valueGet = 10;
+      let valueGet = 25;
       let data;
 
       if (searchPokemon.length >= 3 && wsearchPokemon == 'searchApi') {
@@ -48,10 +61,23 @@ function Home() {
 
           setDatePokemon(data.results.filter(({ name }) => name.includes(searchPokemon)));
         }
+
+
+        else if(wsearchPokemon == 'firestore'){
+          setDatePokemon([]);
+          getDataF();
+        }
+        else if(wsearchPokemon == 'searchApi'){
+          setDataPokemonF([]);
+          const data = await getDate('pokemon', valueGet);
+          setDatePokemon(data.results);
+        }
+
         else {
           const data = await getDate('pokemon', valueGet);
           setDatePokemon(data.results);
         }
+
 
       } catch (e) {
         console.log(e);
@@ -90,9 +116,16 @@ function Home() {
         <div className='gap-4 d-flex flex-wrap  justify-content-center'>
 
           {
-            datePokemon.map((value, llave) => (
-
+            datePokemon?.map((value, llave) => (
               <PokemonCard key={llave} name={value.name} url={value.url} />
+            ))
+
+          }
+
+          {
+            dataPokemonF?.map((value, llave) => (
+
+              <PokemonCardF key={llave} evolucion1={value.evolucion[0]} evolucion2={value.evolucion[1]} id={value.id} image={value.image} nombre={value.nombre} tipo1={value.tipo[0]} tipo2={value.tipo[1]} />
             ))
           }
         </div>
