@@ -8,7 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 function InputSearch() {
     return (
         <InputGroup className="my-4">
-            <Form.Control aria-label="Text input with dropdown button" />
+            <Form.Control aria-label="Text input with dropdown button" placeholder='Search by filter' />
 
             <DropdownButton
                 variant="outline-secondary"

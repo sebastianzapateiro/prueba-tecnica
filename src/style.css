@@ -1,0 +1,10 @@
+.img-pokemon {
+    background: #c7ffff2e;
+    height: 50%;
+}
+
+.name-pokemon{
+
+    text-transform: capitalize;
+
+}
