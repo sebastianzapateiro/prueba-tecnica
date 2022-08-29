@@ -61,7 +61,7 @@ function Home() {
     getData();
 
 
-  }, [searchPokemon])
+  }, [searchPokemon, wsearchPokemon])
 
 
 
@@ -74,7 +74,7 @@ function Home() {
 
 
         <InputGroup className="my-4">
-          <Form.Control onChange={(e) => setSearchPokemon(e.target.value)} aria-label="Text input with dropdown button" placeholder='Search by filter' />
+          <Form.Control onChange={(e) => setSearchPokemon(e.target.value)} aria-label="Text input with dropdown button" placeholder='Search by filter - Seleccione el origin para poder filtrar' />
 
           <DropdownButton
             variant="outline-secondary"
