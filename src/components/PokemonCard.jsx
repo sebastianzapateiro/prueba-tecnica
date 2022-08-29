@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { getDate } from '../helpers/CRUD';
 import '../../src/style.css'
+import { Link } from 'react-router-dom';
 
 function PokemonCard(props) {
 
@@ -61,13 +62,13 @@ function PokemonCard(props) {
 
         getData();
 
-    }, [props,pokemon])
+    }, [props, pokemon])
 
 
     return (
 
         <Card style={{ width: '16.3rem' }}>
-            <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />
+                  <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />
             <Card.Body>
                 <Card.Title className='name-pokemon'>{props.name}</Card.Title>
                 <Card.Text>
@@ -83,9 +84,11 @@ function PokemonCard(props) {
                     </p>
 
                 </Card.Text>
+                <div className='text-center mt-4'><Link  to={'/pokemon/' + id}><Button variant="primary">Ver pokemon!</Button></Link></div>
 
             </Card.Body>
         </Card>
+
     )
 }
 

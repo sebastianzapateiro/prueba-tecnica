@@ -94,7 +94,7 @@ function Home() {
   return (
     <>
 
-      <NavBar />
+      
 
       <Container className='mt-5'>
 
@@ -113,7 +113,10 @@ function Home() {
           </DropdownButton>
         </InputGroup>
 
+<h4>Los pokemons listados vienen desde: {wsearchPokemon}</h4>
+
         <div className='gap-4 d-flex flex-wrap  justify-content-center'>
+
 
           {
             datePokemon?.map((value, llave) => (

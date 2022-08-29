@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import icon from '../assets/pikachu.png'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -16,7 +17,7 @@ function NavBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
 
-          <Nav.Link href="#action1" className='text-white'>Home</Nav.Link>
+          <Link to={'/home'} className='text-white nav-link' >Home</Link>
           <Nav.Link href="#action1" className='text-white'>Create pokemon</Nav.Link>
           <Nav.Link href="#action1" className='text-white'>Edit pokemon</Nav.Link>
           <Nav.Link href="#action1" className='text-white'>Delete pokemon</Nav.Link>
