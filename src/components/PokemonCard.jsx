@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { getDate } from '../helpers/CRUD';
 import '../../src/style.css'
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 function PokemonCard(props) {
 
@@ -67,7 +68,7 @@ function PokemonCard(props) {
 
     return (
         <>
-        <NavBar />
+        
 
         <Card style={{ width: '16.3rem' }}>
                   <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />

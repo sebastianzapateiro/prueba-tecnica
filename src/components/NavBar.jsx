@@ -4,8 +4,11 @@ import icon from '../assets/pikachu.png'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { actionLogoutAsyn } from '../redux/actions/actionLogin';
+import { useDispatch } from 'react-redux';
 
 function NavBar() {
+  const dispatch = useDispatch();
   return (
     <Navbar collapseOnSelect expand="lg" sticky="top" bg="dark" variant="dark">
 
@@ -30,7 +33,7 @@ function NavBar() {
           <NavDropdown.Item href="#action/3.2">
             App Repository
           </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.4">
+          <NavDropdown.Item onClick={() => dispatch(actionLogoutAsyn())} href="#action/3.4">
             Logout
           </NavDropdown.Item>
         </NavDropdown>

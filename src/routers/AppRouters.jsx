@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import DescriptionPokemon from '../components/DescriptionPokemon'
 import DescriptionPoemon from '../components/DescriptionPokemon'
-import DescriptionPokemonF from '../components/DescriptionPokemonF copy'
+import DescriptionPokemonF from '../components/DescriptionPokemonF'
 import Home from '../components/Home'
 import NavBar from '../components/NavBar'
 import { PrivateRouter } from './PrivateRouter'
@@ -67,6 +67,11 @@ function AppRouters() {
           </PrivateRouter>
         } />
 
+<Route path="/home" element={
+          <PrivateRouter isAutentication={isLoggedIn}>
+            <Home/>
+          </PrivateRouter>
+        } />
         <Route path="/pokemon-f/:name" element={
           <PrivateRouter isAutentication={isLoggedIn}>
             <DescriptionPokemonF />

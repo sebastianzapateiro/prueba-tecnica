@@ -13,14 +13,12 @@ const Register = () => {
         nombre: '',
         email: '',
         pass: '',
-       telefono: '',
-        direccion: ''
     })
 
     const {nombre, email, pass, telefono, direccion} = formValue
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(nombre, email, pass, telefono, direccion)
+        console.log(nombre, email, pass)
         dispatch(actionRegisterAsync(nombre, email, pass, telefono, direccion))
         reset()
     }
@@ -42,14 +40,6 @@ const Register = () => {
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" name="pass" value={formValue.pass} onChange={handleInputChange} />
-            </Form.Group>
-                       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Telefono</Form.Label>
-                <Form.Control type="tel" name="telefono" value={formValue.telefono} onChange={handleInputChange}/>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Dirección</Form.Label>
-                <Form.Control as="textarea" rows={3} name="direccion" value={formValue.direccion} onChange={handleInputChange}  />
             </Form.Group>
             <Button type="submit" variant="outline-info"  size="lg" >
               Registrarse
