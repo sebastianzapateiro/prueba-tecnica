@@ -13,9 +13,9 @@ function PokemonCardF(props) {
         <Card.Title className='name-pokemon'>{props.nombre}</Card.Title>
         <Card.Text>
           <p><span>Id: </span>{props.id}</p>
-          <p>{props.evolucion}</p>
+          <p>Evoluciones: &nbsp; {props.evolucion}</p>
           <p>
-            {props.tipo}
+            Tipos: &nbsp;{props.tipo}
           </p>
 
         </Card.Text>

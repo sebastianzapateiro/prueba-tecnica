@@ -78,8 +78,9 @@ function PokemonCard(props) {
 
 
                     <p><span>Id: </span>{id}</p>
-                    <p>{pokemonEvolution?.chain?.evolves_to[0]?.species?.name}  {pokemonEvolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name}</p>
+                    <p>Evoluciones: {pokemonEvolution?.chain?.evolves_to[0]?.species?.name}  {pokemonEvolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name}</p>
                     <p>
+                    Tipos: &nbsp;
                         {pokemon.types?.map((tipo, llave) => (
                             <span key={llave} >{tipo.type.name}&nbsp;</span>
                         ))
