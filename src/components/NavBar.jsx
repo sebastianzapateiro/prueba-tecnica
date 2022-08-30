@@ -27,8 +27,7 @@ function NavBar() {
       <Nav>
 
         <NavDropdown className='text-white' title="" id="collasible-nav-dropdown">
-          <NavDropdown.Item className='link-api' href="#action/3.1">My profile</NavDropdown.Item>
-          <NavDropdown.Item className='link-api' href="#action/3.2">
+          <NavDropdown.Item className='link-api' href="https://github.com/sebastianzapateiro/prueba-tecnica" target="_blank">
             App Repository
           </NavDropdown.Item>
           <NavDropdown.Item className='link-api' onClick={() => dispatch(actionLogoutAsyn())} href="#action/3.4">
