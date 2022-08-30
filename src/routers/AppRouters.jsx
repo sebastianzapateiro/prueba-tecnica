@@ -12,6 +12,8 @@ import { PublicRouter } from './PublicRouter'
 import Login from '../components/Login';
 import Register from '../components/Register';
 import AgregarPokemon from '../components/AgregarPokemon';
+import EditarPokemon from '../components/EditarPokemon';
+
 
 function AppRouters() {
   const [cheking, setCheking] = useState(true)
@@ -21,11 +23,11 @@ function AppRouters() {
     const auth = getAuth()
     onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
-        console.log(user)
+        /* console.log(user) */
         setIsLoggedIn(true)
 
         user.getIdToken()
-          .then((token) => { console.log('el token es: ', token) })
+          /* .then((token) => { console.log('el token es: ', token) }) */
       }
       else {
         setIsLoggedIn(false)
@@ -80,6 +82,14 @@ function AppRouters() {
             <AgregarPokemon />
           </PrivateRouter>
         } />
+
+<Route path="/edit-pokemon/:id" element={
+          <PrivateRouter isAutentication={isLoggedIn}>
+            <EditarPokemon />
+          </PrivateRouter>
+        } />
+
+
 
 <Route path="/home" element={
           <PrivateRouter isAutentication={isLoggedIn}>

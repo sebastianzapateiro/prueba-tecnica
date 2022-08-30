@@ -129,7 +129,7 @@ function Home() {
           {
             dataPokemonF?.map((value, llave) => (
 
-              <PokemonCardF key={llave} evolucion1={value.evolucion[0]} evolucion2={value.evolucion[1]} id={value.id} image={value.image} nombre={value.nombre} tipo1={value.tipo[0]} tipo2={value.tipo[1]} />
+              <PokemonCardF key={llave} evolucion={value.evolucion} id={value.id_pokemon} image={value.image} nombre={value.nombre} tipo={value.tipo} />
             ))
           }
         </div>

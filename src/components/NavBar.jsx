@@ -22,8 +22,6 @@ function NavBar() {
 
           <Link to={'/home'} className='text-white nav-link' >Home</Link>
           <Link to={'/add-pokemon'} className='text-white nav-link'>Create pokemon</Link>
-          <Nav.Link href="#action1" className='text-white'>Edit pokemon</Nav.Link>
-          <Nav.Link href="#action1" className='text-white'>Delete pokemon</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       <Nav>

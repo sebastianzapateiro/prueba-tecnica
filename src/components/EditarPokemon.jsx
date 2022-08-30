@@ -1,18 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState, useSyncExternalStore } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getDataFireStore, getDataFireStoreId } from '../helpers/CRUD';
 import useForm from '../Hooks/useForm';
 import { editCitaAsync } from '../redux/actions/actionAgendar';
+import NavBar from './NavBar';
 
 function EditarPokemon() {
+    let { id } = useParams();
+    
+
+    const [datos, setDatos] = useState([]);
+
+    async function getDataF() {
+        try {
+            const data = await getDataFireStoreId('pokemon', id);
+            setDatos(data);
+            
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+        getDataF();
+    }, [])
 
     const [formValue, handleInputChange, reset] = useForm({
-        nombre: datos.nombre,
-        email: datos.email,
-        fecha: datos.fecha,
-        hora: datos.hora,
-        telefono: datos.telefono,
-        sintomas: datos.sintomas,
+        nombre: datos?.nombre,
+        abilidad:datos.abilidad,
+        altura:datos.altura,
+        egg:datos.egg,
+        evolucion:datos.evolucion,
+        id_pokemon:datos.id_pokemon,
+        imagen:datos.imagen,
+        peso:datos.peso,
+        tipo:datos.tipo,
+
     })
 
 
@@ -28,8 +53,9 @@ function EditarPokemon() {
         <>
 
             <NavBar />
+            {console.log(formValue,datos)}
             <Form onSubmit={handleSubmit} style={{ margin: '5%', marginLeft: '10%', marginRight: '10%' }}>
-                <h1 style={{ textAlign: 'center', color: 'blue' }}>Agregar pokemon</h1>
+                <h1 style={{ textAlign: 'center', color: 'blue' }}>Editar pokemon</h1>
                 <hr />
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Nombre del pokemon</Form.Label>

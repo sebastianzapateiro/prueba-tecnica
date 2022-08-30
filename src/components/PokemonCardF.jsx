@@ -3,6 +3,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { doc, deleteDoc } from "firebase/firestore";
 
 function PokemonCardF(props) {
   return (
@@ -12,9 +13,9 @@ function PokemonCardF(props) {
         <Card.Title className='name-pokemon'>{props.nombre}</Card.Title>
         <Card.Text>
           <p><span>Id: </span>{props.id}</p>
-          <p>{props.evolucion1}  {props.evolucion2}</p>
+          <p>{props.evolucion}</p>
           <p>
-            {props.tipo1} {props.tipo2}
+            {props.tipo}
           </p>
 
         </Card.Text>

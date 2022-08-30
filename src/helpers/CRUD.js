@@ -1,6 +1,6 @@
 
 
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { db } from "../firebase-config";
 
 
@@ -37,4 +37,22 @@ export const getDataFireStore = async (endpoint) => {
         docArray.push(doc.data());
     });
     return docArray;
+}
+
+export const getDataFireStoreId = async (endpoint,id) => {
+    let data;
+    const docRef = doc(db, endpoint, id);
+
+
+    const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  
+  data = docSnap.data();
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
+
+    return data;
 }
