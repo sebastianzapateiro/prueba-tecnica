@@ -96,7 +96,7 @@ function Home() {
       <NavBar />
 
       
-
+{console.log(datePokemon)}
       <Container className='mt-5'>
 
 
@@ -129,7 +129,7 @@ function Home() {
           {
             dataPokemonF?.map((value, llave) => (
 
-              <PokemonCardF key={llave} evolucion={value.evolucion} id={value.id_pokemon} image={value.image} nombre={value.nombre} tipo={value.tipo} />
+              <PokemonCardF key={llave} evolucion={value.evolucion} id={value.id_pokemon} image={value.imagen} nombre={value.nombre} tipo={value.tipo} />
             ))
           }
         </div>
