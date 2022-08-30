@@ -1,7 +1,7 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore"
 import { db } from "../../firebase-config"
 
-import { typesAgendar } from "../types/types"
+import { typesPokemons } from "../types/types"
 
 //----------------editar-----------------------------///
 export const editCitaAsync = (nuevaCita) => {
@@ -33,7 +33,7 @@ export const editCitaAsync = (nuevaCita) => {
 
 export const editCitaSync = (nuevaCita) => {
     return {
-        type: typesAgendar.edit,
+        type: typesPokemons.edit,
         payload: { nuevaCita }
 
     }
@@ -61,7 +61,7 @@ export const listAgendaAsync = () => {
 
 export const listAgendarSync = (agenda) => {
     return {
-        type: typesAgendar.list,
+        type: typesPokemons.list,
         payload: agenda
     }
 }
@@ -87,7 +87,7 @@ export const actionAddAgendaAsync = (formValue) => {
 
 export const actionAddAgendaSync = (formValue) => {
     return {
-        type: typesAgendar.add,
+        type: typesPokemons.add,
         payload: formValue
     }
 
@@ -114,7 +114,7 @@ export const deleteCitaAsync = (email) => {
 
 export const actionDeleteEmailSync = (email) => {
     return {
-        type: typesAgendar.delete,
+        type: typesPokemons.delete,
         payload: email
     }
 }

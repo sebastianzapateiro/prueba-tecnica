@@ -2,7 +2,7 @@
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import useForm from '../Hooks/useForm';
-import { actionAddAgendaAsync} from '../redux/actions/actionAgendar';
+import { actionAddAgendaAsync } from '../redux/actions/actionAgregar';
 import React from 'react'
 import NavBar from './NavBar';
 
@@ -12,16 +12,16 @@ function AgregarPokemon() {
 
     const [formValue, handleInputChange, reset] = useForm({
         nombre: '',
-        abilidad:'',
-        altura:'',
-        egg:'',
-        evolucion:'',
-        id_pokemon:'',
-        imagen:'',
-        peso:'',
-        tipo:'',
+        abilidad: '',
+        altura: '',
+        egg: '',
+        evolucion: '',
+        id_pokemon: '',
+        imagen: '',
+        peso: '',
+        tipo: '',
 
-        
+
     })
 
 
@@ -35,10 +35,10 @@ function AgregarPokemon() {
     return (
         <>
 
-        <NavBar/>
-        <Form onSubmit={handleSubmit} style={{ margin: '5%', marginLeft: '10%', marginRight: '10%' }}>
-                <h1 style={{ textAlign: 'center', color: 'blue' }}>Agregar pokemon</h1>
-                <hr />
+            <NavBar />
+            <Form onSubmit={handleSubmit} style={{ margin: '5%', marginLeft: '24%', marginRight: '24%' }}>
+                <h1 className='text-center mb-5'>Añadir pokemon</h1>
+
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Nombre del pokemon</Form.Label>
                     <Form.Control type="text" name="nombre" value={formValue.nombre} onChange={handleInputChange} />
@@ -75,9 +75,9 @@ function AgregarPokemon() {
                     <Form.Label>Tipo del pokemon</Form.Label>
                     <Form.Control type="text" name="tipo" value={formValue.tipo} onChange={handleInputChange} />
                 </Form.Group>
-                <Button type="submit" variant="info" >Agendar</Button>
+                <Button className='w-100' type="submit" variant="info" >Agregar</Button>
             </Form>
-            </> 
+        </>
     )
 }
 

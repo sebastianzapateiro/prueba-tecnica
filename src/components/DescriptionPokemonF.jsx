@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getDataFireStore, getDate } from '../helpers/CRUD';
 import { doc, deleteDoc } from "firebase/firestore";
 import NavBar from './NavBar';
@@ -17,6 +17,7 @@ function DescriptionPokemonF() {
   let { name } = useParams();
 
   
+let navigate = useNavigate();
 
 const eliminarPokemon = async () =>{
   await deleteDoc(doc(db, "pokemon", name));
@@ -26,6 +27,7 @@ const eliminarPokemon = async () =>{
 
 const deletePokemon = ()=>{
    eliminarPokemon();
+   return navigate('/home')
   }
 
   async function getDataF() {

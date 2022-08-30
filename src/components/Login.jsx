@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useForm from '../Hooks/useForm';
 import { actionLoginAsync, loginGoogle } from '../redux/actions/actionLogin';
+import facebook_icon from '../assets/facebook.gif'
+import google_icon from '../assets/google.png'
 
 
 const Login = () => {
@@ -27,34 +29,35 @@ const Login = () => {
     return (
         <div style={{ margin: '15%', marginLeft: '30%', marginRight: '30%' }}>
             <Form onSubmit={handleSubmit}>
-                <h1 style={{ textAlign: 'center', color: 'blue' }}>Iniciar Sesion</h1>
-                <hr />
+                <h1 className='text-center mb-5'>Iniciar Sesion</h1>
+                
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email </Form.Label>
+                    <Form.Label>Correo electronico </Form.Label>
                     <Form.Control type="email" placeholder="name@example.com" name="email" value={formValue.email} onChange={handleInputChange} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Contraseña</Form.Label>
                     <Form.Control type="password" name="pass" value={formValue.pass} onChange={handleInputChange} />
                 </Form.Group>
 
-                <Container style={{ justifyContent: 'center' }}>
-                    <Button type="submit" variant="info" style={{ margin: "3%" }}  >
-                        <Image style={{ width: "30%" }} src="https://res.cloudinary.com/danimel/image/upload/v1635784501/login_1_p33a7m.png" alt="" />
+
+                <Button type="submit" className='w-100 my-3' variant="info">
+                    Login
+                </Button>
+
+
+                <div className="d-flex justify-content-center align-items-center">
+
+                    <Button type="submit" style={{ background: "none", border: "none" }} onClick={() => dispatch(loginGoogle())} >
+                        <Image style={{ width: "50px" }} src={google_icon} alt="" />
                     </Button>
 
-                    <Button type="submit" variant="outline-info" style={{ margin: "3%" }} onClick={() => dispatch(loginGoogle())} >
-                        <Image src="https://res.cloudinary.com/danimel/image/upload/v1655397953/google_ywov5r.png" alt="" />
+                    <Button type="submit" variant="outline-info" style={{ background: "none", border: "none" }}>
+                        <Image style={{ width: "50px" }} src={facebook_icon} alt="" />
                     </Button>
-
-                    <Button type="submit" variant="outline-info" style={{ margin: "1%" }}>
-                        <Image src="https://res.cloudinary.com/danimel/image/upload/v1655397954/facebook_emylt7.png" alt="" />
-                    </Button>
-                </Container>
-                <div className="d-grid gap-2">
-                    <Link to="/register"><Button type="submit" variant="outline-info" size="lg" >
-                        Nuevo Usuario - Registrase
+                    <Link to="/register"><Button type="submit" variant="info"  >
+                        Registrase
                     </Button></Link>
                 </div>
 

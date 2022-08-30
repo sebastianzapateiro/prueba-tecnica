@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getDataFireStore, getDataFireStoreId } from '../helpers/CRUD';
 import useForm from '../Hooks/useForm';
-import { editCitaAsync } from '../redux/actions/actionAgendar';
+import { editCitaAsync } from '../redux/actions/actionAgregar';
 import NavBar from './NavBar';
 
 function EditarPokemon() {
@@ -54,9 +54,9 @@ function EditarPokemon() {
 
             <NavBar />
             {console.log(formValue,datos)}
-            <Form onSubmit={handleSubmit} style={{ margin: '5%', marginLeft: '10%', marginRight: '10%' }}>
-                <h1 style={{ textAlign: 'center', color: 'blue' }}>Editar pokemon</h1>
-                <hr />
+            <Form onSubmit={handleSubmit} style={{ margin: '5%', marginLeft: '15%', marginRight: '15%' }}>
+            <h1 className='text-center mb-5'>Añadir pokemon</h1> <hr />
+
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Nombre del pokemon</Form.Label>
                     <Form.Control type="text" name="nombre" value={formValue.nombre} onChange={handleInputChange} />
@@ -93,7 +93,7 @@ function EditarPokemon() {
                     <Form.Label>Tipo del pokemon</Form.Label>
                     <Form.Control type="text" name="tipo" value={formValue.tipo} onChange={handleInputChange} />
                 </Form.Group>
-                <Button type="submit" variant="info" >Editar</Button>
+                <Button className='w-100' type="submit" variant="info" >Editar</Button>
             </Form>
         </>
     )

@@ -87,7 +87,7 @@ function PokemonCard(props) {
                     </p>
 
                 </Card.Text>
-                <div className='text-center mt-4'><Link  to={'/pokemon-a/' + id}><Button variant="primary">Ver pokemon!</Button></Link></div>
+                <div className='text-center mt-4'><Link  to={'/pokemon-a/' + id}><Button variant="info">Ver pokemon!</Button></Link></div>
 
             </Card.Body>
         </Card>

@@ -1,25 +1,25 @@
-import { typesAgendar } from "../types/types"
+import { typesPokemons } from "../types/types"
 
 
 const initialState = {
     agendaCitas: []
 }
 
-export const citasReducers = (state = initialState, action) => {
+export const pokemonsReducers = (state = initialState, action) => {
     switch (action.type) {
-        case typesAgendar.add:
+        case typesPokemons.add:
             return {
                 agendaCitas: [...state.agendaCitas, action.payload]
             }
-        case typesAgendar.delete:
+        case typesPokemons.delete:
             return {
                 agendaCitas: state.agendaCitas.filter(c => c.email !== action.payload)
             }
-        case typesAgendar.list:
+        case typesPokemons.list:
             return {
                 agendaCitas: [...action.payload]
             }
-        case typesAgendar.edit:
+        case typesPokemons.edit:
                 return {
                   ...state
             }
