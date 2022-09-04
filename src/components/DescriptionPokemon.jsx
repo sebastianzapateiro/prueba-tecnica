@@ -4,6 +4,8 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import { getDate } from '../helpers/CRUD';
 import NavBar from './NavBar';
+import { motion } from "framer-motion";
+
 
 function DescriptionPokemon() {
 
@@ -46,49 +48,52 @@ function DescriptionPokemon() {
 
 
   return (
+
     <>
-    <NavBar />
+      <NavBar />
+      <motion.div initial={{opacity:0}} animate={{padding:100, opacity:1}} transition={{ duration: 0.4 }}
+      >
+        <Container  className='mt-5'>
 
-    <Container className='mt-5'>
-    
-      <div className='d-flex justify-content-center flex-wrap mb-4'>
-        #{name}
-        <span> {pokemonDatos?.name}</span>
-      </div>
-      <Row>
-        <Col>
-          <img src={pokemonDatos.sprites?.other.dream_world.front_default} alt="Bulbasaur" />
-        </Col>
-        <Col>
-          <div className='d-flex flex-column'>
-            <p className='description-pokemon'>
-              Desde que nace, crece alimentándose de los nutrientes que contiene la semilla de su lomo.
-
-            </p>
-
-            <div><span>Tipos: </span>
-              {pokemonDatos.types?.map((tipo, llave) => (
-                <span key={llave} >{tipo.type.name}&nbsp;</span>
-              ))
-              }
-            </div>
-            <div><span>Altura: </span><span>{pokemonDatos?.height}</span></div>
-            <div><span>Peso: </span><span>{pokemonDatos?.weight}</span></div>
-            <div><span>Abilidades: </span>{pokemonDatos.abilities?.map((tipo, llave) => (
-              <span key={llave} >{tipo.ability.name}&nbsp;</span>
-            ))
-            }</div>
-            <div><span>Grupo de huevos: </span><span>
-
-              {pokemonDatosS.egg_groups?.map((tipo, llave) => (
-                <span key={llave} >{tipo.name}&nbsp;</span>
-              ))
-              }
-            </span></div>
+          <div className='d-flex justify-content-center flex-wrap mb-4'>
+            #{name}
+            <span> {pokemonDatos?.name}</span>
           </div>
-        </Col>
-      </Row>
-    </Container>
+          <Row>
+            <Col>
+              <img src={pokemonDatos.sprites?.other.dream_world.front_default} alt="Bulbasaur" />
+            </Col>
+            <Col>
+              <div className='d-flex flex-column'>
+                <p className='description-pokemon'>
+                  Desde que nace, crece alimentándose de los nutrientes que contiene la semilla de su lomo.
+
+                </p>
+
+                <div><span>Tipos: </span>
+                  {pokemonDatos.types?.map((tipo, llave) => (
+                    <span key={llave} >{tipo.type.name}&nbsp;</span>
+                  ))
+                  }
+                </div>
+                <div><span>Altura: </span><span>{pokemonDatos?.height}</span></div>
+                <div><span>Peso: </span><span>{pokemonDatos?.weight}</span></div>
+                <div><span>Abilidades: </span>{pokemonDatos.abilities?.map((tipo, llave) => (
+                  <span key={llave} >{tipo.ability.name}&nbsp;</span>
+                ))
+                }</div>
+                <div><span>Grupo de huevos: </span><span>
+
+                  {pokemonDatosS.egg_groups?.map((tipo, llave) => (
+                    <span key={llave} >{tipo.name}&nbsp;</span>
+                  ))
+                  }
+                </span></div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </motion.div>
     </>
   )
 }
