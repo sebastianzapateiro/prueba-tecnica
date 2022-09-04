@@ -7,22 +7,22 @@ import { PokemonCard } from "../components/PokemonCard";
 
 describe('Pruebas al Componente Home', () => {
 
-    test('Debe mostrarse correctamente las tarjetas de pokemons', () => {
+    test('Test para validar obtención de pokemon a través de api', () => {
+    })
 
-        const pokemon = {
-            name:'bulbasaur',
-            url:'https://pokeapi.co/api/v2/pokemon/1/'
+    test('Test para validar obtencion de poemon a través de FireStore', () => {
+    })
 
-        }
+    test('Test para validar filtro de API', () => {
+    })
 
-        render(<PokemonCard name={pokemon.name} url={pokemon.url} />);
-        const poke = screen.getByTestId("pokemoncard"); 
-        expect(poke).toBeInTheDocument(); 
+    test('Test para validar filtro de Firestore', () => {
+    })
 
+    test('Test para validar descripcion de pokemon firestore', () => {
+    })
 
-
-
-
+    test('Test para validar descripcion de pokemon Api', () => {
     })
 
 })
