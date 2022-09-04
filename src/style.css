@@ -18,3 +18,17 @@ a{
 .link-api{
     color:black !important;
 }
+.tipo-pokemon{
+    
+    display: flex;
+    gap: 10px;
+}
+
+.tipo-p{
+    display: flex;
+    gap: 10px;
+    background-color: rgb(180, 180, 180);
+    padding: 5px 12px;
+    border-radius: 10px;
+
+}

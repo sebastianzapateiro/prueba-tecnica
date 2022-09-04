@@ -70,6 +70,7 @@ function Home() {
         else if(wsearchPokemon == 'searchApi'){
           setDataPokemonF([]);
           const data = await getDate('pokemon', valueGet);
+          console.log(data);
           setDatePokemon(data.results);
         }
 

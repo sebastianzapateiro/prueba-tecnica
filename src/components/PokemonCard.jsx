@@ -5,6 +5,8 @@ import { getDate } from '../helpers/CRUD';
 import '../../src/style.css'
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
+import '../style.css'
+
 
 function PokemonCard(props) {
 
@@ -68,31 +70,34 @@ function PokemonCard(props) {
 
     return (
         <>
-        
-
-        <Card style={{ width: '16.3rem' }}>
-                  <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />
-            <Card.Body>
-                <Card.Title className='name-pokemon'>{props.name}</Card.Title>
-                <Card.Text>
 
 
-                    <p><span>Id: </span>{id}</p>
-                    <p>Evoluciones: {pokemonEvolution?.chain?.evolves_to[0]?.species?.name}  {pokemonEvolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name}</p>
-                    <p>
-                    Tipos: &nbsp;
-                        {pokemon.types?.map((tipo, llave) => (
-                            <span key={llave} >{tipo.type.name}&nbsp;</span>
-                        ))
-                        }
-                    </p>
+            <Card style={{ width: '16.3rem' }}>
+                <Card.Img className='img-pokemon p-2' variant="top" src={pokemon.sprites?.other.dream_world.front_default} />
+                <Card.Body>
+                    <Card.Title className='name-pokemon'>{props.name}</Card.Title>
+                    <Card.Text>
 
-                </Card.Text>
-                <div className='text-center mt-4'><Link  to={'/pokemon-a/' + id}><Button variant="info">Ver pokemon!</Button></Link></div>
 
-            </Card.Body>
-        </Card>
-</>
+                        <p><span>Id: </span>{id}</p>
+                        <p>Evoluciones: {pokemonEvolution?.chain?.evolves_to[0]?.species?.name}  {pokemonEvolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name}</p>
+                        <div className='tipo-pokemon'>
+                            
+                            {pokemon.types?.map((tipo, llave) => (
+                                <div className='tipo-p'>
+                                    <img src={`/src/assets/icons-types/${tipo.type.name}.svg`} ></img>
+                                    <span key={llave} >{tipo.type.name}&nbsp;</span>
+                                </div>
+                            ))
+                            }
+                        </div>
+
+                    </Card.Text>
+                    <div className='text-center mt-4'><Link to={'/pokemon-a/' + id}><Button className="w-100" variant="info">Ver pokemon!</Button></Link></div>
+
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 
